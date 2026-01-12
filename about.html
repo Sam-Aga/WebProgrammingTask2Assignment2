@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Me</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("jeremy-bishop-G9i_plbfDgk-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+/* Main card */
+.content {
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    padding: 28px 32px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+/* Accent bar */
+.content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(180deg, #2fa4a9, #1e3c72);
+    border-radius: 10px 0 0 10px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    color: #1e3c72;
+    font-size: 28px;
+}
+
+h2 {
+    margin: 20px 0 6px 0;
+    font-size: 20px;
+    color: #1e3c72;
+}
+
+/* Text */
+p {
+    margin: 6px 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Images */
+img {
+    width: 120px;
+    border-radius: 8px;
+    border: 3px solid #eef3f7;
+}
+
+/* Floating images */
+.float-left {
+    float: left;
+    margin: 8px 20px 8px 0;
+}
+
+.float-right {
+    float: right;
+    margin: 8px 0 8px 20px;
+}
+
+/* Clear floats */
+.clear {
+    clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+    <h1>About Me</h1>
+
+    <p>
+        I am a student at VIT Vellore, who is currently pursuing his B.Tech in Computer Science Engineering. I am currently in my third sem, and am learning web programming, which i find very interesting as it teaches and tests us on our creativity as well as technical skills.
+    </p>
+
+    <img src="Samarth2.jpeg" alt="My Photo" class="float-left">
+
+    <p>
+	<br>
+        Some of my hobbies include reading, listening to music, and solving puzzles like sudoku.
+    </p>
+
+    <div class="clear"></div>
+
+    <h2>Interests</h2>
+
+    <img src="Reading.jfif" alt="Reading" class="float-left">
+    <img src="images.jfif" alt="Other Interest" class="float-right">
+
+    <div class="clear"></div>
+</div>
+
+</body>
+</html>
