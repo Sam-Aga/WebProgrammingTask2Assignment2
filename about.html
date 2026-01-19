@@ -4,118 +4,182 @@
 <meta charset="UTF-8">
 <title>About Me</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --primary: #4facfe;
+    --secondary: #00f2fe;
+    --text-dark: #1f2933;
+    --text-light: #6b7280;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+}
+
 * {
-    font-family: "Inter", sans-serif;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
     margin: 0;
-    height: 100vh;
-    background-image: url("jeremy-bishop-G9i_plbfDgk-unsplash.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("jeremy-bishop-G9i_plbfDgk-unsplash.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    padding: 40px;
 }
 
-/* Main card */
-.content {
-    max-width: 900px;
+/* Main Card */
+.container {
+    max-width: 1000px;
     width: 100%;
-    background-color: white;
-    padding: 28px 32px;
-    border-radius: 10px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.header-text p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Section */
+.section {
+    margin-top: 40px;
+}
+
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
     position: relative;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
-/* Accent bar */
-.content::before {
+.section h2::after {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 8px;
-    height: 100%;
-    background: linear-gradient(180deg, #2fa4a9, #1e3c72);
-    border-radius: 10px 0 0 10px;
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin-top: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
 }
 
-h1 {
-    margin: 0 0 10px 0;
-    color: #1e3c72;
-    font-size: 28px;
+/* Interests Grid */
+.interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
 }
 
-h2 {
-    margin: 20px 0 6px 0;
-    font-size: 20px;
-    color: #1e3c72;
+.interest-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Text */
-p {
-    margin: 6px 0;
+.interest-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+.interest-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.interest-card p {
+    padding: 16px;
     font-size: 15px;
-    line-height: 1.5;
+    color: var(--text-light);
+    text-align: center;
 }
 
-/* Images */
-img {
-    width: 120px;
-    border-radius: 8px;
-    border: 3px solid #eef3f7;
-}
+/* Responsive */
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-/* Floating images */
-.float-left {
-    float: left;
-    margin: 8px 20px 8px 0;
-}
-
-.float-right {
-    float: right;
-    margin: 8px 0 8px 20px;
-}
-
-/* Clear floats */
-.clear {
-    clear: both;
+    .container {
+        padding: 32px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="content">
-    <h1>About Me</h1>
+<div class="container">
 
-    <p>
-        I am a student at VIT Vellore, who is currently pursuing his B.Tech in Computer Science Engineering. I am currently in my third sem, and am learning web programming, which i find very interesting as it teaches and tests us on our creativity as well as technical skills.
-    </p>
+    <!-- Header Section -->
+    <div class="header">
+        <img src="Samarth2.jpeg" alt="My Photo" class="profile-pic">
+        <div class="header-text">
+            <h1>About Me</h1>
+            <p>
+                I am a student at VIT Vellore, currently pursuing a B.Tech in Computer Science Engineering. I’m in my third semester and deeply interested in web programming, because of the relation between creativity and technical skills.
+            </p>
+        </div>
+    </div>
 
-    <img src="Samarth2.jpeg" alt="My Photo" class="float-left">
+    <!-- Interests -->
+    <div class="section">
+        <h2>Interests & Hobbies</h2>
 
-    <p>
-	<br>
-        Some of my hobbies include reading, listening to music, and solving puzzles like sudoku.
-    </p>
+        <div class="interests">
+            <div class="interest-card">
+                <img src="Reading.jfif">
+                <p>Reading books and exploring new ideas</p>
+            </div>
 
-    <div class="clear"></div>
+            <div class="interest-card">
+                <img src="images.jfif">
+                <p>Listening to music and relaxing</p>
+            </div>
 
-    <h2>Interests</h2>
+            <div class="interest-card">
+                <img src="Sudoku.png" alt="Puzzles">
+                <p>Solving puzzles like Sudoku</p>
+            </div>
+        </div>
+    </div>
 
-    <img src="Reading.jfif" alt="Reading" class="float-left">
-    <img src="images.jfif" alt="Other Interest" class="float-right">
-
-    <div class="clear"></div>
 </div>
 
 </body>
